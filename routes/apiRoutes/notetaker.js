@@ -3,12 +3,10 @@ const note = require('../../db/db.json')
 const router = require('express').Router();
 
 router.get('/notes', (req, res) => {
-    console.log(note);
     let input = note;
     res.json(input); 
 });
-router.post('/notes', (req, res) => {
-    console.log(req.body);  
+router.post('/notes', (req, res) => {  
     if(!noteValidation(req.body)) {
       res.status(400).send("Your Note is foramtted incorrectly, please try again!");
     } else {
