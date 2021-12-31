@@ -8,7 +8,7 @@ router.get('/notes', (req, res) => {
 });
 router.post('/notes', (req, res) => {  
     if(!noteValidation(req.body)) {
-      res.status(400).send("Your Note is foramtted incorrectly, please try again!");
+      res.status(400).send("Your Note is formatted incorrectly, please try again!");
     } else {
       const notes = newNote(req.body, note);
       res.json(notes);
