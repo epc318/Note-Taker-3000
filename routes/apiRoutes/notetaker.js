@@ -2,12 +2,12 @@ const { noteValidation, newNote } = require("../../lib/notetaker");
 const note = require('../../db/db.json')
 const router = require('express').Router();
 
-router.get('/notetaker', (req, res) => {
+router.get('/notes', (req, res) => {
     console.log(note);
     let input = note;
     res.json(input); 
 });
-router.post('/notetaker', (req, res) => {
+router.post('/notes', (req, res) => {
     console.log(req.body);  
     if(!noteValidation(req.body)) {
       res.status(400).send("Your Note is foramtted incorrectly, please try again!");

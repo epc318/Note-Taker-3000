@@ -1,5 +1,5 @@
-const notetaker = require('../apiRoutes/notetaker');
+const noteTaker = require('../apiRoutes/notetaker');
 const router = require('express').Router();
 
-router.use(notetaker);
+router.use(noteTaker);
 module.exports = router;
